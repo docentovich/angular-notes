@@ -1,0 +1,33 @@
+.container {
+  width: 80%;
+  max-width: 800px;
+
+  margin: auto;
+  display: flex;
+}
+
+.col {
+  width: 50%;
+  margin: 0 10px;
+
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .col {
+    width: 100%;
+
+    &--topics {
+      order: 1;
+    }
+
+    &--notes {
+      margin-top: 35px;
+      order: 2;
+    }
+  }
+}

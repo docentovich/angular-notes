@@ -1,0 +1,46 @@
+<h2>Заметки</h2>
+
+<ng-container *ngIf="!!notes; else selectTopic">
+  <div class="add-new">
+    <mat-form-field class="add-notes-input">
+      <mat-label>Добавить заметку</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="newNoteTitle"
+        placeholder="текст заметки"
+      ></textarea>
+    </mat-form-field>
+
+    <div>
+      <button (click)="submitNoteForm()">OK</button>
+    </div>
+  </div>
+
+  <div
+    class="list"
+    cdkDropList
+    *ngIf="notes.length > 0; else noNotes"
+    [class.is-dragging]="isDragging"
+    [cdkDropListData]="notes"
+    id="notes-list"
+    cdkDropListConnectedTo="topic-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <app-note
+      cdkDrag
+      [cdkDragData]="note"
+      (cdkDragStarted)="isDragging = true"
+      (cdkDragEnded)="isDragging = false"
+      *ngFor="let note of notes"
+      [note]="note"
+    ></app-note>
+  </div>
+</ng-container>
+
+<ng-template #selectTopic>
+  <span>Выберите сначала тему</span>
+</ng-template>
+
+<ng-template #noNotes>
+  <span>Добавьте заметку</span>
+</ng-template>

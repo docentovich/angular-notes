@@ -1,0 +1,22 @@
+app-note {
+  width: 100%;
+  border-bottom: 1px solid #dddae2;
+  padding: 10px 7px;
+
+  display: block;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: #ffffff;
+
+  .date {
+    display: block;
+    text-align: right;
+    font-size: 0.8em;
+  }
+}
+
+app-topics app-note {
+  display: none;
+}
+
+

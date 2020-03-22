@@ -1,0 +1,4 @@
+<div class="topic" [class.active]="topic.isSelected">
+  {{ topic.title }}
+  <span class="remove" *ngIf="!topic.isSelected && (topic.id !== null)" (click)="delete()">🗑️</span>
+</div>

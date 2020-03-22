@@ -14,7 +14,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@topics/*": [
+        "src/app/topics-feature/*"
+      ],
+      "@notes/*": [
+        "src/app/notes-feature/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

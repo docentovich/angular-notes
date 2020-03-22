@@ -1,0 +1,39 @@
+<h2>Темы</h2>
+
+<div class="add-new">
+  <mat-form-field class="add-topic-input">
+    <mat-label>Добавить тему</mat-label>
+    <textarea matInput [(ngModel)]="newTopicTitle" placeholder="Имя темы" ></textarea>
+  </mat-form-field>
+
+  <div>
+    <button (click)="submitTopicForm()">OK</button>
+  </div>
+</div>
+
+<div
+  *ngIf="topics.length > 0; else addNewTopic"
+  class="list"
+  cdkDropList
+  id="topic-list"
+  cdkDropListConnectedTo="notes-list"
+  [cdkDropListDisabled]="true"
+  (cdkDropListDropped)="drop($event)"
+  (mouseout)="topicsMouseOut()"
+>
+  <app-topic
+    cdkDrag
+    cdkDragDisabled
+    id="topic-{{ topic.id }}"
+    (mouseover)="topicMouseOver(topic.id)"
+    *ngFor="let topic of topics"
+    (selectTopic)="selectTopic.emit($event)"
+    (deleteTopic)="deleteTopic.emit($event)"
+    [topic]="topic"
+  >
+  </app-topic>
+</div>
+
+<ng-template #addNewTopic>
+  <span>Добавьте хотя бы одну тему</span>
+</ng-template>

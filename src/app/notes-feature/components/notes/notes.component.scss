@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.add-notes-input {
+  width: 100%;
+}
+
+.add-new {
+  margin-bottom: 25px;
+  min-height: 110px;
+}
+
+.list:not(.is-dragging) app-note:hover {
+  background: #eee;
+}

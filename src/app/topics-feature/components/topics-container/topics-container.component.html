@@ -1,0 +1,8 @@
+<app-topics
+  *ngIf="(allTopics$ | async) as allTopics"
+  (addTopic)="onAddTopicTitle($event)"
+  (selectTopic)="onSelectTopic($event)"
+  (deleteTopic)="onDeleteTopic($event)"
+  (addNoteToTopic)="onAddNoteToTopic($event)"
+  [topics]="allTopics">
+</app-topics>

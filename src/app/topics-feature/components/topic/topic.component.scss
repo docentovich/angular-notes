@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  transform: none !important; // re-indent material
+}
+
+.topic {
+  width: 100%;
+  border-bottom: 1px solid #dddae2;
+  padding: 10px 7px;
+
+  box-sizing: border-box;
+  cursor: pointer;
+
+  .remove  {
+    right: -33px;
+
+    float: right;
+    position: relative;
+  }
+
+  &:hover {
+    background: #eee;
+  }
+
+  &.active {
+    background: #eff025;
+  }
+}

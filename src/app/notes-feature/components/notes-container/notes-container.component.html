@@ -1,0 +1,5 @@
+<app-notes
+  [notes]="allNotesInTopic$ | async"
+  (addNote)="onAddNote($event)"
+  (orderNote)="onOrderNote($event)"
+></app-notes>
